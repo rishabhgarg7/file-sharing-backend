@@ -6,7 +6,7 @@ const morgan = require('morgan')
 //internal modules
 const connectDB = require('./utils/db')
 const fileRoutes = require('./resources/file/file.router')
-const PORT = process.env.port || 3000
+const PORT = process.env.PORT || 3000
 
 const app = express();
 app.disable('x-powered-by')
