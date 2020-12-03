@@ -14,7 +14,10 @@ app.disable('x-powered-by')
 // configure app to use bodyParser(), this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(cors())
+const corsOptions = {
+    origin: process.env.ALLOWED_CLIENTS.split(',')
+}
+app.use(cors(corsOptions))
 app.use(morgan('dev'))
 
 //routes
